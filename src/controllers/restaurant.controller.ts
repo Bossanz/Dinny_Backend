@@ -4,7 +4,7 @@ import { pool } from "../config/db";
 export const getRestaurants = async (req: Request, res: Response) => {
   try {
     const [rows] = await pool.query(
-      "SELECT res_id, res_name, res_email, res_phone FROM BP_restaurant"
+      "SELECT res_id, res_name, res_email, res_phone, res_active_status FROM BP_restaurant"
     );
     res.json(rows);
   } catch (err: any) {

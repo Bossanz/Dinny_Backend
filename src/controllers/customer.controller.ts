@@ -7,7 +7,7 @@ export const getCustomers = async (
 ): Promise<void> => {
   try {
     const [rows] = await pool.query(
-      "SELECT cus_id, cus_name, cus_email, cus_phone FROM BP_customer"
+      "SELECT cus_id, cus_name, cus_email, cus_phone, cus_active_status FROM BP_customer"
     );
     res.json(rows);
   } catch (err: any) {

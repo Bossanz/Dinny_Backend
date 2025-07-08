@@ -4,7 +4,7 @@ import { pool } from "../config/db";
 export const getRiders = async (req: Request, res: Response) => {
   try {
     const [rows] = await pool.query(
-      "SELECT rid_id, rid_name, rid_email, rid_phone FROM BP_rider"
+      "SELECT rid_id, rid_name, rid_email, rid_phone, rid_active_status FROM BP_rider"
     );
     res.json(rows);
   } catch (err: any) {
