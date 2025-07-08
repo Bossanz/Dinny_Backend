@@ -3,6 +3,7 @@ import { getCustomers, toggleBanCustomer } from "../controllers/customer.control
 import { getRestaurants, toggleBanRestaurant } from "../controllers/restaurant.controller";
 import { getRiders, toggleBanRider } from "../controllers/rider.controller";
 import { verifyToken } from "../middleware/verifyToken";
+import { getDashboardStats } from "../controllers/dashboard.controller";
 
 export const userRouter = Router();
 
@@ -14,3 +15,7 @@ userRouter.put("/restaurants/:id/ban", verifyToken, toggleBanRestaurant);
 
 userRouter.get("/riders", verifyToken, getRiders);
 userRouter.put("/riders/:id/ban", verifyToken, toggleBanRider);
+
+userRouter.get("/dashboard/stats", verifyToken,getDashboardStats);
+
+userRouter.get("/reports", verifyToken,getDashboardStats);
